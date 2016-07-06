@@ -34,8 +34,8 @@ server.post('/games', function (request, response){
     genre: request.body.genre,
     ageRating: request.body.ageRating,
     players: request.body.players,
-    isCurrent: false,
-    isCooperative: false
+    isCurrent: !!request.body.isCurrent,
+    isCooperative: !!request.body.isCooperative
   };
 
   var result = db.get('games')
@@ -46,6 +46,20 @@ server.post('/games', function (request, response){
 });
 
 server.put('/games/:id', function (request,response){
+  var updatedGameInfo = {
+    genre: request.body.name,
+    ageRating: request.body.ageRating,
+    players: request.body.players,
+    system: request.body.system,
+    isCurrent: request.body.isCurrent,
+    isCooperative: request.body.isCooperative
+  };
+
+  var updatedGame = db.get('games')
+                    .find({id: request.params.id})
+                    .assign(updatedGameInfo)
+                    .value();
+  response.send(updatedGame);
 
 });
 

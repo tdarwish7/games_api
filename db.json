@@ -3,11 +3,11 @@
     {
       "id": "c96b1708-6326-4014-8a6e-729f6f6f74e7",
       "name": "Dead Space",
-      "genre": "Sci-Fi/Fantasy",
-      "ageRating": "Mature",
-      "players": "1",
-      "isCurrent": false,
-      "isCooperative": false
+      "genre": "Heros of the Storm",
+      "ageRating": "Teen",
+      "players": "10",
+      "isCurrent": "true",
+      "isCooperative": "true"
     },
     {
       "id": "56be9db1-e9fb-4ec4-b436-eedf4476ae1c",
@@ -21,11 +21,57 @@
     {
       "id": "a9c82953-bfd3-42b2-8512-3f0d523e7e45",
       "name": "Left for Dead",
-      "genre": "Sci-Fi/Zombies",
+      "genre": "Gears of War 3",
+      "ageRating": "Mature",
+      "players": "4",
+      "isCurrent": "",
+      "isCooperative": "true"
+    },
+    {
+      "id": "14665d27-0a41-484f-b68a-9bd4c273acff",
+      "name": "Gears of War 3",
+      "genre": "Sci-Fi Shooter (thirdperson)/Post Apocalyptic",
       "ageRating": "Mature",
       "players": "4",
       "isCurrent": false,
       "isCooperative": false
+    },
+    {
+      "id": "be060956-2cc3-413b-ba81-afe8a43fce13",
+      "name": "Gears of War 3",
+      "genre": "Sci-Fi Shooter (thirdperson)/Post Apocalyptic",
+      "ageRating": "Mature",
+      "players": "4",
+      "isCurrent": false,
+      "isCooperative": false
+    },
+    {
+      "id": "4f2e0b91-6628-4b21-a397-416da0670558",
+      "name": "Gears of War 3",
+      "genre": "Sci-Fi Shooter (thirdperson)/Post Apocalyptic",
+      "ageRating": "Mature",
+      "players": "4",
+      "isCurrent": true,
+      "isCooperative": false
+    },
+    {
+      "id": "a3db8a07-0bf0-4c05-aa28-8d12f32050e7",
+      "name": "Heros of the Storm",
+      "genre": "MOBA",
+      "ageRating": "Teen",
+      "players": "10",
+      "isCurrent": true,
+      "isCooperative": true
+    },
+    {
+      "id": "2464d71d-72a8-4d81-95f3-17669d727bfc",
+      "name": "Heros of the Storm",
+      "genre": "MOBA",
+      "ageRating": "Teen",
+      "players": "10",
+      "system": "XBOX360",
+      "isCurrent": true,
+      "isCooperative": true
     }
   ]
 }
