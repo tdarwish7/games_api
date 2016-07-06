@@ -1,3 +1,31 @@
 {
-  "games": []
+  "games": [
+    {
+      "id": "c96b1708-6326-4014-8a6e-729f6f6f74e7",
+      "name": "Dead Space",
+      "genre": "Sci-Fi/Fantasy",
+      "ageRating": "Mature",
+      "players": "1",
+      "isCurrent": false,
+      "isCooperative": false
+    },
+    {
+      "id": "56be9db1-e9fb-4ec4-b436-eedf4476ae1c",
+      "name": "Super Smash Brothers: Melee",
+      "genre": "Adventure/Arcade/Competitive",
+      "ageRating": "Everyone",
+      "players": "4",
+      "isCurrent": false,
+      "isCooperative": false
+    },
+    {
+      "id": "a9c82953-bfd3-42b2-8512-3f0d523e7e45",
+      "name": "Left for Dead",
+      "genre": "Sci-Fi/Zombies",
+      "ageRating": "Mature",
+      "players": "4",
+      "isCurrent": false,
+      "isCooperative": false
+    }
+  ]
 }

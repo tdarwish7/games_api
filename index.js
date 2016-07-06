@@ -21,14 +21,28 @@ server.get('/games', function (request, response){
 });
 
 server.get('/games/:id', function (request, response){
-  var games = db.get('games')
+  var game = db.get('games')
               .find({id: request.params.id})
               .value();
   response.send(game);
 });
 
 server.post('/games', function (request, response){
+  var game ={
+    id: uuid.v4(),
+    name: request.body.name,
+    genre: request.body.genre,
+    ageRating: request.body.ageRating,
+    players: request.body.players,
+    isCurrent: false,
+    isCooperative: false
+  };
 
+  var result = db.get('games')
+                .push(game)
+                .last()
+                .value();
+  response.send(result);
 });
 
 server.put('/games/:id', function (request,response){
