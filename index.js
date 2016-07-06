@@ -20,4 +20,27 @@ server.get('/games', function (request, response){
   response.send(games);
 });
 
+server.get('/games/:id', function (request, response){
+  var games = db.get('games')
+              .find({id: request.params.id})
+              .value();
+  response.send(game);
+});
+
+server.post('/games', function (request, response){
+
+});
+
+server.put('/games/:id', function (request,response){
+
+});
+
+server.delete('/games/:id', function (request, response){
+  var game = db.get('games')
+              .remove({id: request.params.id})
+              .value();
+    response.send(game);
+});
+
+
 server.listen(port);
