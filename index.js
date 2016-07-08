@@ -1,9 +1,12 @@
+
 var express = require('express');
 var server = express();
 var bodyParser = require('body-parser');
 var lowdb = require('lowdb');
 var uuid = require('uuid');
 
+//import my model
+var Game = require('./models/game.js');
 var port = process.env.PORT || 8080;
 var db = lowdb('db.json');
 
@@ -28,16 +31,7 @@ server.get('/games/:id', function (request, response){
 });
 
 server.post('/games', function (request, response){
-  var game ={
-    id: uuid.v4(),
-    name: request.body.name,
-    genre: request.body.genre,
-    ageRating: request.body.ageRating,
-    players: request.body.players,
-    isCurrent: !!request.body.isCurrent,
-    isCooperative: !!request.body.isCooperative
-  };
-
+  var game = new Game(request.body.name, request.body.genre, request.body.ageRating, request.body.players, request.body.systems, request.body.isitGarbage);
   var result = db.get('games')
                 .push(game)
                 .last()
@@ -46,18 +40,11 @@ server.post('/games', function (request, response){
 });
 
 server.put('/games/:id', function (request,response){
-  var updatedGameInfo = {
-    genre: request.body.name,
-    ageRating: request.body.ageRating,
-    players: request.body.players,
-    system: request.body.system,
-    isCurrent: request.body.isCurrent,
-    isCooperative: request.body.isCooperative
-  };
-
+  var game = new Game(request.body.name, request.body.genre, request.body.ageRating, request.body.players, request.body.systems, request.body.isitGarbage, request.params.id);
+  game.updateComplete(request.body.isCurrent, request.body.isCooperative);
   var updatedGame = db.get('games')
                     .find({id: request.params.id})
-                    .assign(updatedGameInfo)
+                    .assign(game)
                     .value();
   response.send(updatedGame);
 
